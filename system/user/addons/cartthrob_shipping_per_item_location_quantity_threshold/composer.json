@@ -1,0 +1,16 @@
+{
+  "name": "cartthrob/shipping-per-item-location-quantity-threshold",
+  "description": "CartThrob Shipping by Location Quantity Threshold Per Item",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Foster Made",
+      "email": "support@cartthrob.com"
+    }
+  ],
+  "autoload": {
+    "classmap": [
+      "src/Cartthrob_shipping_per_item_location_quantity_threshold.php"
+    ]
+  }
+}
