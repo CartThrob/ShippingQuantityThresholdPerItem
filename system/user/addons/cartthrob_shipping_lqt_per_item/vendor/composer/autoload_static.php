@@ -7,7 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInit21706523f63ed085b7bcf62d36583df5
 {
     public static $classMap = array (
-        'Cartthrob_shipping_per_item_location_quantity_threshold' => __DIR__ . '/../..' . '/src/Cartthrob_shipping_per_item_location_quantity_threshold.php',
+        'Cartthrob_shipping_lqt_per_item' => __DIR__ . '/../..' . '/src/Cartthrob_shipping_lqt_per_item.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 

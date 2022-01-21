@@ -5,11 +5,13 @@ if (!defined('CARTTHROB_PATH')) {
 }
 
 use CartThrob\Plugins\Shipping\ShippingPlugin;
+use Money\Money;
 
-class Cartthrob_shipping_per_item_location_quantity_threshold extends ShippingPlugin
+class Cartthrob_shipping_lqt_per_item extends ShippingPlugin
 {
-    public $title = 'title_by_location_quantity_threshold_per_item';
-    public $classname = __CLASS__;
+    // CartThrob Properties
+    public $short_title = 'ct.lqt_per_item.short_title';
+
     public $settings = [
             [
                 'name' => 'set_shipping_cost_by',
@@ -80,9 +82,10 @@ class Cartthrob_shipping_per_item_location_quantity_threshold extends ShippingPl
         ];
 
     /**
+     * @param Cartthrob_cart $cart
      * @return Money
      */
-    public function get_shipping(): Money
+    public function rate(Cartthrob_cart $cart): Money
     {
         $customer_info = $this->core->cart->customer_info();
 
@@ -97,6 +100,7 @@ class Cartthrob_shipping_per_item_location_quantity_threshold extends ShippingPl
         }
 
         $total_shipping = 0;
+
         foreach ($this->core->cart->items() as $item) {
             if ($item->is_shippable()) {
                 $total_items = $item->quantity();
@@ -116,9 +120,7 @@ class Cartthrob_shipping_per_item_location_quantity_threshold extends ShippingPl
                             continue;
                         } else {
                             $shipping = ($this->plugin_settings('mode') == 'rate') ? $price * $threshold_setting['rate'] : $threshold_setting['rate'];
-
                             $priced = true;
-
                             break;
                         }
                         $last_rate = $threshold_setting['rate'];
@@ -128,9 +130,7 @@ class Cartthrob_shipping_per_item_location_quantity_threshold extends ShippingPl
                             continue;
                         } else {
                             $shipping = ($this->plugin_settings('mode') == 'rate') ? $price * $threshold_setting['rate'] : $threshold_setting['rate'];
-
                             $priced = true;
-
                             break;
                         }
                         $last_rate = $threshold_setting['rate'];
@@ -145,6 +145,6 @@ class Cartthrob_shipping_per_item_location_quantity_threshold extends ShippingPl
             }
         }
 
-        return $total_shipping;
+        return ee('cartthrob:MoneyService')->toMoney($total_shipping);
     }
 }

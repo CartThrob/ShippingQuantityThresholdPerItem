@@ -1,17 +1,17 @@
 <?php
 
-class Cartthrob_shipping_per_item_location_quantity_threshold_ext
+class Cartthrob_shipping_lqt_per_item_ext
 {
-    public $name = CARTTHROB_SHIPPING_PER_ITEM_LOCATION_QUANTITY_THRESHOLD_NAME;
-    public $version = CARTTHROB_SHIPPING_PER_ITEM_LOCATION_QUANTITY_THRESHOLD_VERSION;
-    public $description = CARTTHROB_SHIPPING_PER_ITEM_LOCATION_QUANTITY_THRESHOLD_DESC;
+    public $name = CARTTHROB_SHIPPING_LQT_PER_ITEM_NAME;
+    public $version = CARTTHROB_SHIPPING_LQT_PER_ITEM_VERSION;
+    public $description = CARTTHROB_SHIPPING_LQT_PER_ITEM_DESC;
     public $settings_exist = 'n';
     public $docs_url = '';
 
     public $settings = [];
 
     /**
-     * Cartthrob_shipping_per_item_location_quantity_threshold constructor.
+     * Cartthrob_shipping_lqt_per_item constructor.
      * @param string $settings
      */
     public function __construct($settings = '')
@@ -32,9 +32,9 @@ class Cartthrob_shipping_per_item_location_quantity_threshold_ext
      */
     public function cartthrob_boot()
     {
-        ee()->lang->load('cartthrob_shipping_per_item_location_quantity_threshold', $idiom = '', $return = false, $add_suffix = true, $alt_path = __DIR__ . '/');
+        ee()->lang->load('cartthrob_shipping_lqt_per_item', $idiom = '', $return = false, $add_suffix = true, $alt_path = __DIR__ . '/');
 
-        ee('cartthrob:PluginService')->register(Cartthrob_shipping_per_item_location_quantity_threshold::class);
+        ee('cartthrob:PluginService')->register(Cartthrob_shipping_lqt_per_item::class);
     }
 
     /**

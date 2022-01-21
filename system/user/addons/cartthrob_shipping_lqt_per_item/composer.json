@@ -10,7 +10,7 @@
   ],
   "autoload": {
     "classmap": [
-      "src/Cartthrob_shipping_per_item_location_quantity_threshold.php"
+      "src/Cartthrob_shipping_lqt_per_item.php"
     ]
   }
 }

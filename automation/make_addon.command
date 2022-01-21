@@ -22,27 +22,27 @@ BASENAME=$(basename $DIR)
 git checkout $BRANCH || { echo "Could'nt check out $BRANCH branch"; exit 1; }
 
 # get version number from config.php file
-VERSION=$(php -r "include '$DIR/system/user/addons/cartthrob_shipping_per_item_location_quantity_threshold/addon.setup.php'; echo \CARTTHROB_SHIPPING_PER_ITEM_LOCATION_QUANTITY_THRESHOLD_VERSION;")
+VERSION=$(php -r "include '$DIR/system/user/addons/cartthrob_shipping_lqt_per_item/addon.setup.php'; echo \CARTTHROB_SHIPPING_LQT_PER_ITEM_VERSION;")
 
 # go to the directory above the repo
 cd ..
 
 # temporarily rename the repo directory
-mv $BASENAME cartthrob_shipping_per_item_location_quantity_threshold_$VERSION
+mv $BASENAME cartthrob_shipping_lqt_per_item_$VERSION
 
-ARTIFACTSDIR=cartthrob_shipping_per_item_location_quantity_threshold-build
+ARTIFACTSDIR=cartthrob_shipping_lqt_per_item-build
 
 mkdir -p $ARTIFACTSDIR
 
 # add version to zip
-zip -r $ARTIFACTSDIR/cartthrob_shipping_per_item_location_quantity_threshold_$VERSION.zip cartthrob_shipping_per_item_location_quantity_threshold_$VERSION/system -x "*.DS_Store" -x "__MACOSX*" -x "*composer.lock" -x "*composer.json" -x "*.orig" -x "*.git*"
+zip -r $ARTIFACTSDIR/cartthrob_shipping_lqt_per_item_$VERSION.zip cartthrob_shipping_lqt_per_item_$VERSION/system -x "*.DS_Store" -x "__MACOSX*" -x "*composer.lock" -x "*composer.json" -x "*.orig" -x "*.git*"
 
 # move the build directory into the project directory
-rm -rf cartthrob_shipping_per_item_location_quantity_threshold_$VERSION/build
-mv $ARTIFACTSDIR cartthrob_shipping_per_item_location_quantity_threshold_$VERSION/build
+rm -rf cartthrob_shipping_lqt_per_item_$VERSION/build
+mv $ARTIFACTSDIR cartthrob_shipping_lqt_per_item_$VERSION/build
 
 # rename the repo back to its original name
-mv cartthrob_shipping_per_item_location_quantity_threshold_$VERSION $BASENAME
+mv cartthrob_shipping_lqt_per_item_$VERSION $BASENAME
 
 # change directory back to repo
 cd $DIR

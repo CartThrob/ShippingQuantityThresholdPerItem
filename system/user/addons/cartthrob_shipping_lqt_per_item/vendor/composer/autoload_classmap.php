@@ -6,6 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Cartthrob_shipping_per_item_location_quantity_threshold' => $baseDir . '/src/Cartthrob_shipping_per_item_location_quantity_threshold.php',
+    'Cartthrob_shipping_lqt_per_item' => $baseDir . '/src/Cartthrob_shipping_lqt_per_item.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );
