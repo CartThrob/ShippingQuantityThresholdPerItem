@@ -1,8 +1,15 @@
-cartthrob-shipping
-=========================================================
+# CartThrob Shipping by Location Quantity Threshold Per Item
 
-Installation: move file to system > expressionengine > third_party > cartthrob > cartthrob > plugins > shipping
+* [Build Process](/documentation/build.md)
+* [Release Process](/documentation/release.md)
+* [Changelog](/documentation/changelog.md)
 
-http://cartthrob.com/docs/shipping/index.html
+## Code Quality
 
-This plugin is provided as-is at no cost with no warranty expressed or implied. Support is not included. 
+* Prior to committing, run `php-cs-fixer fix` to validate code formatting.
+
+## Support
+
+Please note, modifications and support for this plugin is not included in the standard CartThrob purchase.
+
+This plugin is provided as-is at no cost with no warranty expressed or implied. Support is not included.

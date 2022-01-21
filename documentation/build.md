@@ -1,4 +1,4 @@
-# CartThrob Shipping Sample: Build Process
+# CartThrob Shipping by Location Quantity Threshold Per Item: Build Process
 
 1. From the terminal, make sure you are in the project root directory
 2. Update and commit the version number bump
@@ -6,7 +6,7 @@
         * MAJOR version when you make incompatible API changes
         * MINOR version when you add functionality in a backwards-compatible manner
         * PATCH version when you make backwards-compatible bug fixes. A PATCH number should be excluded if it equals '0'
-    * Update `CARTTHROB_SHIPPING_SAMPLE_NAME` constant in `system/user/addons/cartthrob_shipping_sample/addon.setup.php`
+    * Update `CARTTHROB_SHIPPING_LQT_PER_ITEM_VERSION` constant in `system/user/addons/cartthrob_shipping_lqt_per_item/addon.setup.php`
     * `$ git commit -am "Bumping version"`
 3. Merge `develop` branch into `main` branch
     * `$ git checkout develop && git pull origin develop && git push origin develop`
@@ -17,7 +17,7 @@
     * For example – `$ git tag v4.3` or `$ git tag v4.3.1`
 5. Push all changes to GitHub
     * `$ git push --tags origin main`
-6. Build CartThrob Shipping Sample ZIP
+6. Build CartThrob Shipping by Location Quantity Threshold Per Item ZIP
     * `$ npm run build-addon`
-    * Built CartThrob Shipping Sample ZIP files will be added to the `./build` folder
+    * Built CartThrob Shipping by Location Quantity Threshold Per Item ZIP files will be added to the `./build` folder
 7. [Publish the release](release.md)
